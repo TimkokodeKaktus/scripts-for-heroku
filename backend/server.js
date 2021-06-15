@@ -12,9 +12,10 @@ app.use(cors());
 const users = require('./api/users');
 app.use('/api/users', users);
 
-app.use(express.static(path.join(__dirname, '../build')))
+app.use(express.static(path.join(__dirname, '..', 'build')))
+app.use(express.static('public'));
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../build'))
+    res.sendFile(path.join(__dirname, '..', 'build'))
 })
 
 const port = process.env.PORT || 5000;
