@@ -45,6 +45,7 @@
       "last 1 safari version"
     ]
   },
+  "homepage": ".",
   "main": "./backend/server.js",
   "proxy": "http://localhost:5000"
 }
