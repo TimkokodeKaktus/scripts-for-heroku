@@ -11,5 +11,3 @@ const productSchema = new Schema({
 );
 
 module.exports = mongoose.model("product", productSchema);
-
-// {name: String, age: Number}, {versionKey: false}
