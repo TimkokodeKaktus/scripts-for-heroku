@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path')
+const fs = require('fs')
 const app = express();
 require('./database');
 
@@ -16,15 +17,6 @@ const products = require('./api/products');
 app.use('/api/products', products);
 
 app.use(express.static(path.join(__dirname, '..', 'build')));
-
-app.get('/products', (req, res) => {
-    res.json({
-        name: 'Vasyok',
-        email: 'esd@sdf.com'
-    });
-});
-
-console.log("adfa");
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'build'));

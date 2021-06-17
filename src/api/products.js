@@ -3,24 +3,14 @@ const router = express.Router()
 
 const product = require('../models/product');
 
-router.get('/', (request, response) => {
-    product.find()
+router.get('/', async (request, response) => {
+    await product.find()
         .then(products => response.json(products))
         .catch(err => console.log(err));
 });
 
-//     const userName = req.body.name;
-//     const userAge = req.body.age;
-//     const user = new User({name: userName, age: userAge});
-
-
-router.post('/', (request, response) => {
+router.post('/', async (request, response) => {
     const { name, image_url, description, price } = request.body;
-
-    console.log(request.body.name);
-    console.log(request.body.image_url);
-    console.log(request.body.description);
-    console.log(request.body.price);
 
     const newProduct = new product({
         name: name,
@@ -29,7 +19,7 @@ router.post('/', (request, response) => {
         price: price
     });
 
-    newProduct.save()
+    await newProduct.save()
         .then(() => response.json({
             message: "Created product successfully"
         }))
