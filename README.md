@@ -14,7 +14,7 @@ You will also see any lint errors in the console.
 
 Create new product from json
 ```
-$env + /products/new  
+$env + /products/new
 ```
 
 Read all product from database
@@ -24,10 +24,10 @@ Read all product from database
 
 Update product in database
 ```
-#env + /products/update
+#env + /products/update/{ $id }
 ```
 
 Delete product from database
 ```
-#env + /products/delete
+#env + /products/delete/{ $id }
 ```
